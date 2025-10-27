@@ -15,22 +15,13 @@ def maquina(n ,m):
         queue.append(node)
         
         while queue:
-            #Esta parte esta al pepe
-            # rojo = (-1,-1)
-            # azul = (-1,-1)
-
             s = queue.popleft()
             if s[0] == m[0]: #retorno nivel
                 return s[1]
             # genero arbol 
             #Camino 1
-            # rojo[0] = (graph[s][0]) * 2
-            # rojo[0] = s[0] * 2
-            # rojo[1] = s[1] + 1
             rojo = (s[0] * 2,s[1] + 1)
-            #camino 
-            # azul[0] = s[0] - 1
-            # azul[1] = s[1] + 1
+            #camino 2
             azul = (s[0] - 1,s[1] + 1)
             #actualizo grafo con mis nuevos caminos
             graph[s] = [rojo,azul]
